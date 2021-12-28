@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vue">
+        <span>{{message}}</span><br>
+        <span>{{showMessage()}}</span><br>
+        <span>{{showMessage2()}}</span><br>
+        <img :src="src" alt="Vue.js logo" style="height: 40px; width: 40px;"><br>
+        <button @click="message = 'ESTE ES EL NUEVO MENSAJE'">Cambiar mensaje</button>
+        <button @click="destroy">Destruir instancia</button>
+        <p>Primero {{first}}</p>
+        <p>Segundo {{second}}</p>
+        <p>Tercero {{third}}</p>
+        <p>Cuarto {{fourth}}</p>
+        <p>Quinto {{fifth}}</p> 
+        <p>Suma {{total}}</p>
+        <button @click="first++">Incrementar primero</button>
+        <button @click="second++">Incrementar segundo</button>
+        <button @click="third++">Incrementar tercero</button>
+        <button @click="fourth++">Incrementar cuarto</button>
+        <button @click="fifth++">Incrementar quinto</button><br>
+        <input v-model="name" type="text">
+        <hr>
+        Hola {{name}}, Bienvenido al curso de Vue.js
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
