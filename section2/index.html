@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 2</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vm">
+        <img :src="image" alt="">
+        <div v-text="text"></div>
+        <div>{{text}}</div>
+        <div v-html="text2"></div>
+        <template v-if="show">
+            <h3>Titulo</h3>
+            <p>Parrafo</p>
+            Primer div
+        </template>
+        <div v-else>Segundo div</div><br>
+        <button @click="show2++">Cambiar div</button>
+        <div v-if="show2==0">Div 0</div>
+        <div v-else-if="show2==1">Primer div</div>
+        <div v-else-if="show2==2">Segundo div</div>
+        <div v-else-if="show2==3">Tercer div</div>
+        <div v-else>Mayor a 3</div>
+        <div v-show="show">
+            <h3>Titulo 2</h3>
+            <p>Setting 'display: none;' if v-show is false</p>
+        </div>
+        <h4>Lista de Paises</h4>
+        <ul>
+            <li v-for="(c, i) in countries">{{i+1}}.- {{c}}</li>
+        </ul>
+        <h4>Lista de Paises 2</h4>
+        <ul>
+            <template v-for="c in countries">
+                <li>{{c}}</li>
+                <hr>
+            </template>
+        </ul>
+        <h4>Empleado</h4>
+        <div v-for="(val, key) in employee">
+            {{key}} -> {{val}}
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
